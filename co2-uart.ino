@@ -12,7 +12,7 @@ ADB922S LoRa;
 
 // Settings
 // int use_lora = 1; // 0 = disabled, 1 = enabled
-int data_interval_minutes = 30; // job interval
+int data_interval_minutes = 240; // job interval
 
 
 SoftwareSerial co2Serial(A0, A1); // define MH-Z19 RX TX
@@ -76,6 +76,8 @@ void start(void)
     /*  join LoRaWAN */
     LoRa.join();
     LedOff();
+    delay(30000);
+
 
     //DisableConsole();
     //DisableDebug();
